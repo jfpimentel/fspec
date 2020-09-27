@@ -2,4 +2,4 @@
 
 require "flaky_tester"
 
-FlakyTester.call(ARGV)
+FlakyTester.test(ARGV)

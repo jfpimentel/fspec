@@ -1,0 +1,755 @@
+
+Randomized with seed 35998
+.F...
+
+Failures:
+
+  1) FlakyTester 5 equals 5
+     Failure/Error: expect([0,5,5].sample).to eq(5)
+
+       expected: 5
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:19:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01321 seconds (files took 0.39989 seconds to load)
+5 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:18 # FlakyTester 5 equals 5
+
+Randomized with seed 35998
+
+
+Randomized with seed 16924
+.....
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.00262 seconds (files took 0.27492 seconds to load)
+5 examples, 0 failures
+
+Randomized with seed 16924
+
+
+Randomized with seed 20882
+...FF
+
+Failures:
+
+  1) FlakyTester 2 equals 2
+     Failure/Error: expect([0,2,2].sample).to eq(2)
+
+       expected: 2
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 1 equals 1
+     Failure/Error: expect([0,1,1].sample).to eq(1)
+
+       expected: 1
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:3:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01095 seconds (files took 0.2587 seconds to load)
+5 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:6 # FlakyTester 2 equals 2
+rspec ./spec/flaky_tester_spec.rb:2 # FlakyTester 1 equals 1
+
+Randomized with seed 20882
+
+
+Randomized with seed 50261
+F...F
+
+Failures:
+
+  1) FlakyTester 5 equals 5
+     Failure/Error: expect([0,5,5].sample).to eq(5)
+
+       expected: 5
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:19:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 3 equals 3
+     Failure/Error: expect([0,3,3].sample).to eq(3)
+
+       expected: 3
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01154 seconds (files took 0.27401 seconds to load)
+5 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:18 # FlakyTester 5 equals 5
+rspec ./spec/flaky_tester_spec.rb:10 # FlakyTester 3 equals 3
+
+Randomized with seed 50261
+
+
+Randomized with seed 25674
+..F..
+
+Failures:
+
+  1) FlakyTester 4 equals 4
+     Failure/Error: expect([0,4,4].sample).to eq(4)
+
+       expected: 4
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01303 seconds (files took 0.27024 seconds to load)
+5 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:14 # FlakyTester 4 equals 4
+
+Randomized with seed 25674
+
+
+Randomized with seed 25629
+....F
+
+Failures:
+
+  1) FlakyTester 1 equals 1
+     Failure/Error: expect([0,1,1].sample).to eq(1)
+
+       expected: 1
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:3:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01264 seconds (files took 0.27338 seconds to load)
+5 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:2 # FlakyTester 1 equals 1
+
+Randomized with seed 25629
+
+
+Randomized with seed 50216
+.....
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.00309 seconds (files took 0.26551 seconds to load)
+5 examples, 0 failures
+
+Randomized with seed 50216
+
+
+Randomized with seed 43346
+F...F
+
+Failures:
+
+  1) FlakyTester 3 equals 3
+     Failure/Error: expect([0,3,3].sample).to eq(3)
+
+       expected: 3
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 4 equals 4
+     Failure/Error: expect([0,4,4].sample).to eq(4)
+
+       expected: 4
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.0116 seconds (files took 0.25532 seconds to load)
+5 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:10 # FlakyTester 3 equals 3
+rspec ./spec/flaky_tester_spec.rb:14 # FlakyTester 4 equals 4
+
+Randomized with seed 43346
+
+
+Randomized with seed 50659
+FF..F
+
+Failures:
+
+  1) FlakyTester 3 equals 3
+     Failure/Error: expect([0,3,3].sample).to eq(3)
+
+       expected: 3
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 4 equals 4
+     Failure/Error: expect([0,4,4].sample).to eq(4)
+
+       expected: 4
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+  3) FlakyTester 2 equals 2
+     Failure/Error: expect([0,2,2].sample).to eq(2)
+
+       expected: 2
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01406 seconds (files took 0.2719 seconds to load)
+5 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:10 # FlakyTester 3 equals 3
+rspec ./spec/flaky_tester_spec.rb:14 # FlakyTester 4 equals 4
+rspec ./spec/flaky_tester_spec.rb:6 # FlakyTester 2 equals 2
+
+Randomized with seed 50659
+
+
+Randomized with seed 33556
+.F..F
+
+Failures:
+
+  1) FlakyTester 3 equals 3
+     Failure/Error: expect([0,3,3].sample).to eq(3)
+
+       expected: 3
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 5 equals 5
+     Failure/Error: expect([0,5,5].sample).to eq(5)
+
+       expected: 5
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:19:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01243 seconds (files took 0.2731 seconds to load)
+5 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:10 # FlakyTester 3 equals 3
+rspec ./spec/flaky_tester_spec.rb:18 # FlakyTester 5 equals 5
+
+Randomized with seed 33556
+
+
+Randomized with seed 49937
+.....
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.00345 seconds (files took 0.26303 seconds to load)
+5 examples, 0 failures
+
+Randomized with seed 49937
+
+
+Randomized with seed 2904
+..F.F
+
+Failures:
+
+  1) FlakyTester 1 equals 1
+     Failure/Error: expect([0,1,1].sample).to eq(1)
+
+       expected: 1
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:3:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 4 equals 4
+     Failure/Error: expect([0,4,4].sample).to eq(4)
+
+       expected: 4
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01185 seconds (files took 0.26519 seconds to load)
+5 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:2 # FlakyTester 1 equals 1
+rspec ./spec/flaky_tester_spec.rb:14 # FlakyTester 4 equals 4
+
+Randomized with seed 2904
+
+
+Randomized with seed 18699
+.....
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.0033 seconds (files took 0.26739 seconds to load)
+5 examples, 0 failures
+
+Randomized with seed 18699
+
+
+Randomized with seed 2701
+..F..
+
+Failures:
+
+  1) FlakyTester 1 equals 1
+     Failure/Error: expect([0,1,1].sample).to eq(1)
+
+       expected: 1
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:3:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01237 seconds (files took 0.26791 seconds to load)
+5 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:2 # FlakyTester 1 equals 1
+
+Randomized with seed 2701
+
+
+Randomized with seed 11433
+F..FF
+
+Failures:
+
+  1) FlakyTester 2 equals 2
+     Failure/Error: expect([0,2,2].sample).to eq(2)
+
+       expected: 2
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 1 equals 1
+     Failure/Error: expect([0,1,1].sample).to eq(1)
+
+       expected: 1
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:3:in `block (2 levels) in <top (required)>'
+
+  3) FlakyTester 3 equals 3
+     Failure/Error: expect([0,3,3].sample).to eq(3)
+
+       expected: 3
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01184 seconds (files took 0.28847 seconds to load)
+5 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:6 # FlakyTester 2 equals 2
+rspec ./spec/flaky_tester_spec.rb:2 # FlakyTester 1 equals 1
+rspec ./spec/flaky_tester_spec.rb:10 # FlakyTester 3 equals 3
+
+Randomized with seed 11433
+
+
+Randomized with seed 60509
+..F.F
+
+Failures:
+
+  1) FlakyTester 2 equals 2
+     Failure/Error: expect([0,2,2].sample).to eq(2)
+
+       expected: 2
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 4 equals 4
+     Failure/Error: expect([0,4,4].sample).to eq(4)
+
+       expected: 4
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01259 seconds (files took 0.30044 seconds to load)
+5 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:6 # FlakyTester 2 equals 2
+rspec ./spec/flaky_tester_spec.rb:14 # FlakyTester 4 equals 4
+
+Randomized with seed 60509
+
+
+Randomized with seed 5504
+.....
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.00302 seconds (files took 0.2762 seconds to load)
+5 examples, 0 failures
+
+Randomized with seed 5504
+
+
+Randomized with seed 56601
+.FFF.
+
+Failures:
+
+  1) FlakyTester 4 equals 4
+     Failure/Error: expect([0,4,4].sample).to eq(4)
+
+       expected: 4
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 1 equals 1
+     Failure/Error: expect([0,1,1].sample).to eq(1)
+
+       expected: 1
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:3:in `block (2 levels) in <top (required)>'
+
+  3) FlakyTester 5 equals 5
+     Failure/Error: expect([0,5,5].sample).to eq(5)
+
+       expected: 5
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:19:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01577 seconds (files took 0.27999 seconds to load)
+5 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:14 # FlakyTester 4 equals 4
+rspec ./spec/flaky_tester_spec.rb:2 # FlakyTester 1 equals 1
+rspec ./spec/flaky_tester_spec.rb:18 # FlakyTester 5 equals 5
+
+Randomized with seed 56601
+
+
+Randomized with seed 45684
+...F.
+
+Failures:
+
+  1) FlakyTester 2 equals 2
+     Failure/Error: expect([0,2,2].sample).to eq(2)
+
+       expected: 2
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01132 seconds (files took 0.28218 seconds to load)
+5 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:6 # FlakyTester 2 equals 2
+
+Randomized with seed 45684
+
+
+Randomized with seed 50359
+F...F
+
+Failures:
+
+  1) FlakyTester 3 equals 3
+     Failure/Error: expect([0,3,3].sample).to eq(3)
+
+       expected: 3
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 2 equals 2
+     Failure/Error: expect([0,2,2].sample).to eq(2)
+
+       expected: 2
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01216 seconds (files took 0.27184 seconds to load)
+5 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:10 # FlakyTester 3 equals 3
+rspec ./spec/flaky_tester_spec.rb:6 # FlakyTester 2 equals 2
+
+Randomized with seed 50359
+
+
+Randomized with seed 60284
+.F...
+
+Failures:
+
+  1) FlakyTester 5 equals 5
+     Failure/Error: expect([0,5,5].sample).to eq(5)
+
+       expected: 5
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:19:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01623 seconds (files took 0.29276 seconds to load)
+5 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:18 # FlakyTester 5 equals 5
+
+Randomized with seed 60284
+
+
+Randomized with seed 29168
+...FF
+
+Failures:
+
+  1) FlakyTester 4 equals 4
+     Failure/Error: expect([0,4,4].sample).to eq(4)
+
+       expected: 4
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 1 equals 1
+     Failure/Error: expect([0,1,1].sample).to eq(1)
+
+       expected: 1
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:3:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01217 seconds (files took 0.27085 seconds to load)
+5 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:14 # FlakyTester 4 equals 4
+rspec ./spec/flaky_tester_spec.rb:2 # FlakyTester 1 equals 1
+
+Randomized with seed 29168
+
+
+Randomized with seed 8078
+....F
+
+Failures:
+
+  1) FlakyTester 5 equals 5
+     Failure/Error: expect([0,5,5].sample).to eq(5)
+
+       expected: 5
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:19:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01495 seconds (files took 0.2852 seconds to load)
+5 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:18 # FlakyTester 5 equals 5
+
+Randomized with seed 8078
+
+
+Randomized with seed 13353
+FF.F.
+
+Failures:
+
+  1) FlakyTester 4 equals 4
+     Failure/Error: expect([0,4,4].sample).to eq(4)
+
+       expected: 4
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 2 equals 2
+     Failure/Error: expect([0,2,2].sample).to eq(2)
+
+       expected: 2
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+  3) FlakyTester 3 equals 3
+     Failure/Error: expect([0,3,3].sample).to eq(3)
+
+       expected: 3
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01182 seconds (files took 0.27711 seconds to load)
+5 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:14 # FlakyTester 4 equals 4
+rspec ./spec/flaky_tester_spec.rb:6 # FlakyTester 2 equals 2
+rspec ./spec/flaky_tester_spec.rb:10 # FlakyTester 3 equals 3
+
+Randomized with seed 13353
+
+
+Randomized with seed 12847
+.F.FF
+
+Failures:
+
+  1) FlakyTester 4 equals 4
+     Failure/Error: expect([0,4,4].sample).to eq(4)
+
+       expected: 4
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+  2) FlakyTester 2 equals 2
+     Failure/Error: expect([0,2,2].sample).to eq(2)
+
+       expected: 2
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+  3) FlakyTester 1 equals 1
+     Failure/Error: expect([0,1,1].sample).to eq(1)
+
+       expected: 1
+            got: 0
+
+       (compared using ==)
+     # ./spec/flaky_tester_spec.rb:3:in `block (2 levels) in <top (required)>'
+
+Top 0 slowest examples (0 seconds, 0.0% of total time):
+
+Finished in 0.01239 seconds (files took 0.29064 seconds to load)
+5 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/flaky_tester_spec.rb:14 # FlakyTester 4 equals 4
+rspec ./spec/flaky_tester_spec.rb:6 # FlakyTester 2 equals 2
+rspec ./spec/flaky_tester_spec.rb:2 # FlakyTester 1 equals 1
+
+Randomized with seed 12847
+
