@@ -1,6 +1,6 @@
 RSpec.describe FlakyTester::TestRunner do
   describe "#run" do
-    context "when command_options = {times: 11, path: './spec'}", :stdout_off do
+    context "when command_options = {times: 11, path: './spec'}", :stdout_off, :delete_file do
       context "when the system call returns true" do
         it "executes the rspec command 11 times for the path './spec'" do
           command_options = {times: 11, path: "./spec"}
@@ -23,7 +23,7 @@ RSpec.describe FlakyTester::TestRunner do
 
           results_file = test_runner.run
 
-          expect(results_file).to(be_a(Tempfile))
+          expect(results_file).to(be_a(File))
         end
       end
 

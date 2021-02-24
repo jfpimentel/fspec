@@ -105,4 +105,11 @@ RSpec.configure do |config|
     example.run
     $stdout.reopen(original_stdout)
   end
+
+  # Delete result_files after running tests.
+  config.after(:each, :delete_file) do
+    Dir["#{Dir.pwd}/tmp/fspec*"].each do |file|
+      File.delete(file)
+    end
+  end
 end

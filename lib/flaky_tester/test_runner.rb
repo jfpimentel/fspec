@@ -1,4 +1,4 @@
-require "tempfile"
+require "fileutils"
 
 require_relative "./test_runner/errors/rspec_error"
 
@@ -6,7 +6,7 @@ class FlakyTester
   class TestRunner
     def initialize(command_options)
       @command_options = command_options
-      @results_file = Tempfile.new
+      @results_file = build_results_file
     end
 
     def run
@@ -24,6 +24,17 @@ class FlakyTester
     end
 
     private
+
+    def build_results_file
+      dir_name = "tmp"
+      dir_path = File.join(Dir.pwd, dir_name)
+
+      file_name = "fspec@#{Time.now.strftime("%Y%m%d%H%M%S")}.txt"
+      file_path = File.join(Dir.pwd, dir_name, file_name)
+
+      FileUtils.mkpath(dir_path)
+      File.new(file_path, "w+")
+    end
 
     def command
       "#{rspec_command} >> \"#{@results_file.path}\""
