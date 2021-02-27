@@ -3,13 +3,14 @@ class FlakyTester
     FAILED_SUITE_REGEX = /^Failures:$/.freeze
     FAILED_TEST_REGEX = /^rspec (.+:\d+) # .+$/.freeze
 
-    def initialize
+    def initialize(results_file)
+      @results_file = results_file
       @failed_suite_count = 0
       @failed_test_counts = {}
     end
 
-    def parse(results_file)
-      File.open(results_file) do |file|
+    def parse
+      File.open(@results_file) do |file|
         file.each do |line|
           failed_suite_match_data = FAILED_SUITE_REGEX.match(line)
 
@@ -30,8 +31,8 @@ class FlakyTester
 
       results_message
     ensure
-      results_file.close
-      results_file.unlink
+      @results_file.close
+      @results_file.unlink
     end
 
     private

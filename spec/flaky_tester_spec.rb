@@ -1,13 +1,14 @@
 RSpec.describe FlakyTester do
   context "when no options are passed" do
     it "calls test_runner with the default options" do
-      test_runner = double("test_runner", run: true)
-      allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
+      allow(described_class::TestRunner).to(receive(:new))
       allow($stdout).to(receive(:puts)) # stubbing puts to avoid printing messages
 
-      described_class.test
+      described_class.new.test
 
-      expect(test_runner).to(have_received(:run).with(described_class::DEFAULT_COMMAND_OPTIONS))
+      expect(described_class::TestRunner).to(
+        have_received(:new).with(described_class::DEFAULT_COMMAND_OPTIONS)
+      )
     end
 
     context "when there aren't any failures" do
@@ -17,13 +18,12 @@ RSpec.describe FlakyTester do
           file.close
         end
 
-        test_runner = described_class::TestRunner.new
-        allow(test_runner).to(receive(:run).and_return(results_file))
+        test_runner = double("test_runner", run: results_file)
         allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
 
         expected_message = "Success! All tests passed.\n"
 
-        expect{described_class.test}.to(output(expected_message).to_stdout)
+        expect{described_class.new.test}.to(output(expected_message).to_stdout)
       end
     end
 
@@ -34,8 +34,7 @@ RSpec.describe FlakyTester do
           file.close
         end
 
-        test_runner = described_class::TestRunner.new
-        allow(test_runner).to(receive(:run).and_return(results_file))
+        test_runner = double("test_runner", run: results_file)
         allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
 
         expected_message = "Oh no... The suite failed 20 times:\n".tap do |message|
@@ -46,7 +45,7 @@ RSpec.describe FlakyTester do
           message.concat("./spec/flaky_tester_spec.rb:18 failed 6 times.\n")
         end
 
-        expect{described_class.test}.to(output(expected_message).to_stdout)
+        expect{described_class.new.test}.to(output(expected_message).to_stdout)
       end
     end
   end
@@ -56,7 +55,7 @@ RSpec.describe FlakyTester do
       error_message = described_class::Errors::InvalidTimes.new.to_s
       command_instructions = described_class::CommandParser.new.to_s
 
-      expect{described_class.test(["-t", "invalid"])}.to(
+      expect{described_class.new(["-t", "invalid"]).test}.to(
         output("#{error_message}\n#{command_instructions}").to_stdout
       )
     end
@@ -67,7 +66,7 @@ RSpec.describe FlakyTester do
       error_message = described_class::Errors::InvalidTimes.new.to_s
       command_instructions = described_class::CommandParser.new.to_s
 
-      expect{described_class.test(["--times", "invalid"])}.to(
+      expect{described_class.new(["--times", "invalid"]).test}.to(
         output("#{error_message}\n#{command_instructions}").to_stdout
       )
     end
@@ -75,29 +74,27 @@ RSpec.describe FlakyTester do
 
   context "when passing the option: -t 123" do
     it "calls test_runner with the times option set to 123" do
-      test_runner = double("test_runner", run: true)
-      allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
+      allow(described_class::TestRunner).to(receive(:new))
       allow($stdout).to(receive(:puts)) # stubbing puts to avoid printing messages
 
-      described_class.test(["-t", "123"])
+      described_class.new(["-t", "123"]).test
 
-      expect(test_runner).to(have_received(:run).with(
-        a_hash_including(times: 123)
-      ))
+      expect(described_class::TestRunner).to(
+        have_received(:new).with(a_hash_including(times: 123))
+      )
     end
   end
 
   context "when passing the option: --times 123" do
     it "calls test_runner with the times option set to 123" do
-      test_runner = double("test_runner", run: true)
-      allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
+      allow(described_class::TestRunner).to(receive(:new))
       allow($stdout).to(receive(:puts)) # stubbing puts to avoid printing messages
 
-      described_class.test(["--times", "123"])
+      described_class.new(["--times", "123"]).test
 
-      expect(test_runner).to(have_received(:run).with(
-        a_hash_including(times: 123)
-      ))
+      expect(described_class::TestRunner).to(
+        have_received(:new).with(a_hash_including(times: 123))
+      )
     end
   end
 
@@ -106,7 +103,7 @@ RSpec.describe FlakyTester do
       error_message = described_class::Errors::UnknownPath.new.to_s
       command_instructions = described_class::CommandParser.new.to_s
 
-      expect{described_class.test(["-p", "invalid"])}.to(
+      expect{described_class.new(["-p", "invalid"]).test}.to(
         output("#{error_message}\n#{command_instructions}").to_stdout
       )
     end
@@ -117,7 +114,7 @@ RSpec.describe FlakyTester do
       error_message = described_class::Errors::UnknownPath.new.to_s
       command_instructions = described_class::CommandParser.new.to_s
 
-      expect{described_class.test(["--path", "invalid"])}.to(
+      expect{described_class.new(["--path", "invalid"]).test}.to(
         output("#{error_message}\n#{command_instructions}").to_stdout
       )
     end
@@ -125,29 +122,27 @@ RSpec.describe FlakyTester do
 
   context "when passing the option: -p ./spec" do
     it "calls test_runner with the path option set to ./spec" do
-      test_runner = double("test_runner", run: true)
-      allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
+      allow(described_class::TestRunner).to(receive(:new))
       allow($stdout).to(receive(:puts)) # stubbing puts to avoid printing messages
 
-      described_class.test(["-p", "./spec"])
+      described_class.new(["-p", "./spec"]).test
 
-      expect(test_runner).to(have_received(:run).with(
-        a_hash_including(path: "./spec")
-      ))
+      expect(described_class::TestRunner).to(
+        have_received(:new).with(a_hash_including(path: "./spec"))
+      )
     end
   end
 
   context "when passing the option: --path ./spec" do
     it "calls test_runner with the path option set to ./spec" do
-      test_runner = double("test_runner", run: true)
-      allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
+      allow(described_class::TestRunner).to(receive(:new))
       allow($stdout).to(receive(:puts)) # stubbing puts to avoid printing messages
 
-      described_class.test(["--path", "./spec"])
+      described_class.new(["--path", "./spec"]).test
 
-      expect(test_runner).to(have_received(:run).with(
-        a_hash_including(path: "./spec")
-      ))
+      expect(described_class::TestRunner).to(
+        have_received(:new).with(a_hash_including(path: "./spec"))
+      )
     end
   end
 
@@ -155,7 +150,7 @@ RSpec.describe FlakyTester do
     it "outputs the command instructions" do
       command_instructions = described_class::CommandParser.new.to_s
 
-      expect{described_class.test(["-h"])}.to(
+      expect{described_class.new(["-h"]).test}.to(
         output(command_instructions).to_stdout
       )
     end
@@ -165,7 +160,7 @@ RSpec.describe FlakyTester do
     it "outputs the command instructions" do
       command_instructions = described_class::CommandParser.new.to_s
 
-      expect{described_class.test(["--help"])}.to(
+      expect{described_class.new(["--help"]).test}.to(
         output(command_instructions).to_stdout
       )
     end
@@ -180,7 +175,7 @@ RSpec.describe FlakyTester do
       allow(command_parser).to(receive(:parse).and_raise(StandardError, error_message))
       allow(described_class::CommandParser).to(receive(:new).and_return(command_parser))
 
-      expect{described_class.test}.to(
+      expect{described_class.new.test}.to(
         output("#{error_message}\n#{command_instructions}").to_stdout
       )
     end
@@ -196,7 +191,7 @@ RSpec.describe FlakyTester do
       allow(test_runner).to(receive(:system).and_return(false))
       allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
 
-      expect{described_class.test}.to(
+      expect{described_class.new.test}.to(
         output("#{error_message}\n#{command_instructions}").to_stdout
       )
     end

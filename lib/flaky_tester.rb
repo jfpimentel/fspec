@@ -8,19 +8,19 @@ class FlakyTester
     path: ""
   }.freeze
 
-  def self.test(command_args = [])
-    new.test(command_args)
+  def initialize(command_args = [])
+    @command_args = command_args
   end
 
-  def test(command_args)
-    command_parser = CommandParser.new
-    command_options = command_parser.parse(command_args)
+  def test
+    command_parser = CommandParser.new(@command_args)
+    command_options = command_parser.parse
 
-    test_runner = TestRunner.new
-    results_file = test_runner.run(command_options)
+    test_runner = TestRunner.new(command_options)
+    results_file = test_runner.run
 
-    results_parser = ResultsParser.new
-    results_message = results_parser.parse(results_file)
+    results_parser = ResultsParser.new(results_file)
+    results_message = results_parser.parse
 
     puts(results_message)
   rescue => error

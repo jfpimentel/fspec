@@ -5,7 +5,8 @@ require_relative "./errors/unknown_path"
 
 class FlakyTester
   class CommandParser
-    def initialize
+    def initialize(command_args = [])
+      @command_args = command_args
       @command_options = DEFAULT_COMMAND_OPTIONS.dup
       @option_parser = OptionParser.new do |option_parser|
         option_parser.banner = "Usage: fspec [options]"
@@ -16,8 +17,8 @@ class FlakyTester
       set_help_option_handler
     end
 
-    def parse(command_args)
-      @option_parser.parse!(command_args)
+    def parse
+      @option_parser.parse!(@command_args)
       @command_options
     end
 
