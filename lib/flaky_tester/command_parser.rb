@@ -7,27 +7,13 @@ class FlakyTester
   class CommandParser
     def initialize
       @options = DEFAULT_OPTIONS.dup
-
       @option_parser = OptionParser.new do |option_parser|
         option_parser.banner = "Usage: fspec [options]"
-
-        option_message = "Number of times to run the test suite (default: #{DEFAULT_OPTIONS[:times]})"
-        option_parser.on("-t", "--times TIMES", option_message) do |times|
-          raise(Errors::InvalidTimes) unless valid_times?(times)
-          @options[:times] = times.to_i
-        end
-
-        option_message = "Relative path containing the tests to run (default: RSpec's default)"
-        option_parser.on("-p", "--path PATH", option_message) do |path|
-          raise(Errors::UnknownPath) unless valid_path?(path)
-          @options[:path] = path
-        end
-
-        option_parser.on("-h", "--help", "Prints command instructions") do
-          puts(option_parser)
-          exit
-        end
       end
+
+      set_times_option_handler
+      set_path_option_handler
+      set_help_option_handler
     end
 
     def parse(args)
@@ -40,6 +26,29 @@ class FlakyTester
     end
 
     private
+
+    def set_times_option_handler
+      option_message = "Number of times to run the test suite (default: #{DEFAULT_OPTIONS[:times]})"
+      @option_parser.on("-t", "--times TIMES", option_message) do |times|
+        raise(Errors::InvalidTimes) unless valid_times?(times)
+        @options[:times] = times.to_i
+      end
+    end
+
+    def set_path_option_handler
+      option_message = "Relative path containing the tests to run (default: RSpec's default)"
+      @option_parser.on("-p", "--path PATH", option_message) do |path|
+        raise(Errors::UnknownPath) unless valid_path?(path)
+        @options[:path] = path
+      end
+    end
+
+    def set_help_option_handler
+      @option_parser.on("-h", "--help", "Prints command instructions") do
+        puts(@option_parser)
+        exit
+      end
+    end
 
     def valid_times?(times)
       /^[1-9]\d*$/.match(times)
