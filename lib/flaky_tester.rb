@@ -3,26 +3,26 @@ require "flaky_tester/test_runner"
 require "flaky_tester/results_parser"
 
 class FlakyTester
-  DEFAULT_OPTIONS = {
+  DEFAULT_COMMAND_OPTIONS = {
     times: 25,
     path: ""
   }.freeze
 
-  def self.test(args = [])
-    new.test(args)
+  def self.test(command_args = [])
+    new.test(command_args)
   end
 
-  def test(args)
+  def test(command_args)
     command_parser = CommandParser.new
-    options = command_parser.parse(args)
+    command_options = command_parser.parse(command_args)
 
     test_runner = TestRunner.new
-    results = test_runner.run(options)
+    results_file = test_runner.run(command_options)
 
     results_parser = ResultsParser.new
-    message = results_parser.parse(results)
+    results_message = results_parser.parse(results_file)
 
-    puts(message)
+    puts(results_message)
   rescue => error
     puts(error)
     puts(command_parser)

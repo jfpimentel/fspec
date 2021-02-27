@@ -7,18 +7,18 @@ RSpec.describe FlakyTester do
 
       described_class.test
 
-      expect(test_runner).to(have_received(:run).with(described_class::DEFAULT_OPTIONS))
+      expect(test_runner).to(have_received(:run).with(described_class::DEFAULT_COMMAND_OPTIONS))
     end
 
     context "when there aren't any failures" do
       it "outputs a success message" do
-        file = Tempfile.new.tap do |file|
+        results_file = Tempfile.new.tap do |file|
           file.write(File.read("spec/helper_files/success.txt"))
           file.close
         end
 
         test_runner = described_class::TestRunner.new
-        allow(test_runner).to(receive(:run).and_return(file))
+        allow(test_runner).to(receive(:run).and_return(results_file))
         allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
 
         expected_message = "Success! All tests passed.\n"
@@ -29,13 +29,13 @@ RSpec.describe FlakyTester do
 
     context "when there are failures" do
       it "outputs a failure message" do
-        file = Tempfile.new.tap do |file|
+        results_file = Tempfile.new.tap do |file|
           file.write(File.read("spec/helper_files/failure.txt"))
           file.close
         end
 
         test_runner = described_class::TestRunner.new
-        allow(test_runner).to(receive(:run).and_return(file))
+        allow(test_runner).to(receive(:run).and_return(results_file))
         allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
 
         expected_message = "Oh no... The suite failed 20 times:\n".tap do |message|

@@ -6,7 +6,7 @@ require_relative "./errors/unknown_path"
 class FlakyTester
   class CommandParser
     def initialize
-      @options = DEFAULT_OPTIONS.dup
+      @command_options = DEFAULT_COMMAND_OPTIONS.dup
       @option_parser = OptionParser.new do |option_parser|
         option_parser.banner = "Usage: fspec [options]"
       end
@@ -16,9 +16,9 @@ class FlakyTester
       set_help_option_handler
     end
 
-    def parse(args)
-      @option_parser.parse!(args)
-      @options
+    def parse(command_args)
+      @option_parser.parse!(command_args)
+      @command_options
     end
 
     def to_s
@@ -28,10 +28,10 @@ class FlakyTester
     private
 
     def set_times_option_handler
-      option_message = "Number of times to run the test suite (default: #{DEFAULT_OPTIONS[:times]})"
+      option_message = "Number of times to run the test suite (default: #{DEFAULT_COMMAND_OPTIONS[:times]})"
       @option_parser.on("-t", "--times TIMES", option_message) do |times|
         raise(Errors::InvalidTimes) unless valid_times?(times)
-        @options[:times] = times.to_i
+        @command_options[:times] = times.to_i
       end
     end
 
@@ -39,7 +39,7 @@ class FlakyTester
       option_message = "Relative path containing the tests to run (default: RSpec's default)"
       @option_parser.on("-p", "--path PATH", option_message) do |path|
         raise(Errors::UnknownPath) unless valid_path?(path)
-        @options[:path] = path
+        @command_options[:path] = path
       end
     end
 

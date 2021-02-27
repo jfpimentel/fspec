@@ -8,8 +8,8 @@ class FlakyTester
       @failed_test_counts = {}
     end
 
-    def parse(results)
-      File.open(results) do |file|
+    def parse(results_file)
+      File.open(results_file) do |file|
         file.each do |line|
           failed_suite_match_data = FAILED_SUITE_REGEX.match(line)
 
@@ -28,15 +28,15 @@ class FlakyTester
         end
       end
 
-      message
+      results_message
     ensure
-      results.close
-      results.unlink
+      results_file.close
+      results_file.unlink
     end
 
     private
 
-    def message
+    def results_message
       return "Success! All tests passed." if @failed_suite_count == 0
 
       message = "Oh no... The suite failed #{@failed_suite_count} times:"
