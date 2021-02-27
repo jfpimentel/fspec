@@ -21,7 +21,7 @@ RSpec.describe FlakyTester do
         allow(test_runner).to(receive(:run).and_return(file))
         allow(described_class::TestRunner).to(receive(:new).and_return(test_runner))
 
-        expected_message = "Success! The suite failed 0 times.\n"
+        expected_message = "Success! All tests passed.\n"
 
         expect{described_class.test}.to(output(expected_message).to_stdout)
       end

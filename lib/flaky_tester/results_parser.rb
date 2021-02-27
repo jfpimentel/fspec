@@ -37,7 +37,7 @@ class FlakyTester
     private
 
     def message
-      return "Success! The suite failed 0 times." if @failed_suite_count == 0
+      return "Success! All tests passed." if @failed_suite_count == 0
 
       message = "Oh no... The suite failed #{@failed_suite_count} times:"
 
