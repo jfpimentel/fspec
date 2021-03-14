@@ -97,4 +97,12 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
+
+  # Disable stdout to stop printing unwanted messages while running tests.
+  config.around(:each, :stdout_off) do |example|
+    original_stdout = $stdout.clone
+    $stdout.reopen(File.new("/dev/null", "w"))
+    example.run
+    $stdout.reopen(original_stdout)
+  end
 end

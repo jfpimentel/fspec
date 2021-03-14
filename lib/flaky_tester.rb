@@ -3,11 +3,6 @@ require "flaky_tester/test_runner"
 require "flaky_tester/results_parser"
 
 class FlakyTester
-  DEFAULT_COMMAND_OPTIONS = {
-    times: 25,
-    path: ""
-  }.freeze
-
   def initialize(command_args = [])
     @command_args = command_args
   end

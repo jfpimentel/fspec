@@ -1,10 +1,10 @@
 require "tempfile"
 
-require_relative "./errors/rspec_error"
+require_relative "./test_runner/errors/rspec_error"
 
 class FlakyTester
   class TestRunner
-    def initialize(command_options = DEFAULT_COMMAND_OPTIONS)
+    def initialize(command_options)
       @command_options = command_options
       @results_file = Tempfile.new
     end

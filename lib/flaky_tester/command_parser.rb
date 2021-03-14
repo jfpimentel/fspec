@@ -1,10 +1,15 @@
 require "optparse"
 
-require_relative "./errors/invalid_times"
-require_relative "./errors/unknown_path"
+require_relative "./command_parser/errors/invalid_times"
+require_relative "./command_parser/errors/unknown_path"
 
 class FlakyTester
   class CommandParser
+    DEFAULT_COMMAND_OPTIONS = {
+      times: 25,
+      path: ""
+    }.freeze
+
     def initialize(command_args = [])
       @command_args = command_args
       @command_options = DEFAULT_COMMAND_OPTIONS.dup
