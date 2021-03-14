@@ -32,19 +32,19 @@ The example below runs the model tests one hundred times:
 
 If any test fails, the result message will be:
 
-  % fspec
-  Oh no... The suite failed 17 times:
+	% fspec
+	Oh no... The suite failed 17 times:
 
-  ./spec/models/user_spec.rb:62 failed 13 times.
-  ./spec/models/user_spec.rb:24 failed 12 times.
+	./spec/models/user_spec.rb:62 failed 13 times.
+	./spec/models/user_spec.rb:24 failed 12 times.
 
-  Check the errors in the file:
-  tmp/fspec@20210314191550.txt
+	Check the errors in the file:
+	tmp/fspec@20210314191550.txt
 
 If all tests pass, the result message will be:
 
-  % fspec
-  Success! All tests passed.
+	% fspec
+	Success! All tests passed.
 
 ## License
 
