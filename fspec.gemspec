@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "fspec"
-  spec.version = "0.1.0"
+  spec.version = "0.1.1"
   spec.summary = "Runs RSpec suite multiple times to find flaky tests."
   spec.authors = ["João Pimentel"]
   spec.license = "MIT"
