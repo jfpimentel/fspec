@@ -1,3 +1,5 @@
+require "pathname"
+
 class FlakyTester
   class ResultsParser
     FAILED_SUITE_REGEX = /^Failures:$/.freeze
